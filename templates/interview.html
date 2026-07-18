@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interview Questions | AI Interview Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <main class="container">
+        <section class="card">
+            <span class="badge">Personalized Interview Round</span>
+
+            <h1>Interview Questions</h1>
+
+            <p class="subtitle">
+                Answer each question clearly. Submit all answers to receive
+                your AI-generated evaluation and sample answers.
+            </p>
+
+            <form action="/evaluate" method="POST">
+                {% for question in questions %}
+                    <div class="question-card">
+                        <p class="question-number">
+                            Question {{ loop.index }} of {{ questions|length }}
+                        </p>
+
+                        <h3>{{ question }}</h3>
+
+                        <label for="answer{{ loop.index }}">Your Answer</label>
+
+                        <textarea
+                            id="answer{{ loop.index }}"
+                            name="answer{{ loop.index }}"
+                            rows="5"
+                            placeholder="Write your answer here..."
+                            required
+                        ></textarea>
+                    </div>
+                {% endfor %}
+
+                <button type="submit">Submit All Answers</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

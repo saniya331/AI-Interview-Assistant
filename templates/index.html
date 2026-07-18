@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Interview Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <main class="container">
+        <section class="card">
+            <span class="badge">AI-Powered Interview Practice</span>
+
+            <h1>AI Interview Assistant</h1>
+
+            <p class="subtitle">
+                Upload your resume, choose your target role, and receive
+                personalized interview questions with helpful feedback.
+            </p>
+
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+                <label for="job_role">Target Job Role</label>
+                <input
+                    type="text"
+                    id="job_role"
+                    name="job_role"
+                    placeholder="Example: Python Developer"
+                    required
+                >
+
+                <label for="resume">Upload Your Resume</label>
+                <input
+                    type="file"
+                    id="resume"
+                    name="resume"
+                    accept=".pdf"
+                    required
+                >
+
+                <button type="submit">Generate My Interview Questions</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

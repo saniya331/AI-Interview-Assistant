@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Evaluation Report | AI Interview Assistant</title>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <main class="container">
+        <section class="card report-card">
+            <span class="badge">AI Evaluation Complete</span>
+
+            <h1>Interview Evaluation</h1>
+
+            <p class="subtitle">
+                Review your scores, feedback, and suggested improvements.
+            </p>
+
+            <div class="evaluation-report">
+                {{ evaluation_result | safe }}
+            </div>
+
+            <a class="back-button" href="/">Start a New Interview</a>
+        </section>
+    </main>
+</body>
+</html>
